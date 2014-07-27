@@ -5,7 +5,7 @@ var db = mysql.createPool({
 	database : 'icefire',
      user : 'icefire',
 	password : 'ferrari4321',
-    host :'localhost',
+    host :'node.fountaintechies.com',
  });
 
  var CRUD = require('mysql-crud');

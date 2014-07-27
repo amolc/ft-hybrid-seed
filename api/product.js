@@ -1,10 +1,11 @@
 var http = require('http');
 var mysql = require('mysql');
-var connection = mysql.createConnection({
+var db = mysql.createPool({
 	database : 'icefire',
-	user : 'icefire',
+     user : 'icefire',
 	password : 'ferrari4321',
-});
+    host :'node.fountaintechies.com',
+ });
 
 connection.connect(function(err) {
 	if (err != null) {

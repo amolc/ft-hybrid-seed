@@ -1,12 +1,15 @@
 {
-  "name": "application-name",
+  "name": "Fountain-Node-Simple-Framework",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
+  "description": "A simple fountaintechies.com-node framework",
+  "main": "server.js",
+  "repository": "http://www.github.com/amolc/strongloop",
+  "author": "Amol Chawathe<amol@fountaintechies.com>",
   "dependencies": {
-    "express": "3.4.8",
-    "jade": "*"
+    "async": "~0.2.8",
+    "express": "~3.2.4",
+    "socket.io": "~0.9.14",
+    "mysql":"~2.3.0",
+    "mysql-crud":"~0.1.4"
   }
 }

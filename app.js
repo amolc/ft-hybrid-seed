@@ -2,8 +2,7 @@ var express = require('express'), path = require('path');
 var app = express();
 
 //employees = require('./api/employee');
-product = require('./api/product');
-vendor = require('./api/vendor');
+
 state = require('./api/state');
 getdetail = require('./api/getdetail');
 municipality=require('./api/municipality');
