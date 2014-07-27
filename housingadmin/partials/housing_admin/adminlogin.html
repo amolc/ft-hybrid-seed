@@ -1,0 +1,25 @@
+<div class="main_login"  ng-controller="adminLoginController">
+	
+<form role="form" class="form-horizontal form-groups-bordered login_form">
+	<div class="login_inner">
+		<h1 class="login_header">Housing Admin Panel </h1>
+	               <div class="form-group">
+						<label for="field-1" class="col-sm-3 control-label">Username</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" id="field-1" placeholder="Enter username" ng-model="user.username">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="field-3" class="col-sm-3 control-label">Password</label>
+						<div class="col-sm-5">
+							<input type="password" class="form-control" id="field-3" placeholder=" Enter Password" ng-model="user.password">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-5">
+							<button type="submit" class="btn  btn-success_green loginbtn" ng-click="login(user)">Login</button>
+						</div>
+					</div>
+	</div>				
+				</form>
+	</div>

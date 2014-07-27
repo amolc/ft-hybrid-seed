@@ -1,0 +1,160 @@
+<div ng-controller="adminstateController">
+<div class="page-container">
+  <div class="sidebar-menu">
+    <header class="logo-env"> 
+      <!-- logo -->
+      <div class="logo"> <a> <img class="logoimage" src="css/assets/images/logo.png" alt="" /> </a> </div>
+      <!-- logo collapse icon -->
+      <div class="sidebar-collapse"> <a href="" class="sidebar-collapse-icon with-animation" ng-click="showhide('main-menu')"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition --> 
+        <i class="entypo-menu"></i> </a> </div>
+      <!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+      <div class="sidebar-mobile-menu visible-xs"> <a href="" class="with-animation" ng-click="showhide('main-menu')"><!-- add class "with-animation" to support animation --> 
+        <i class="entypo-menu"></i> </a> </div>
+    </header>
+    <ul id="main-menu" class="" >
+      <li class="opened active"> <a href="" ng-click="showhide('sub_menu')"><i class="entypo-menu"></i><span>Admin action</span></a>
+        <ul id="sub_menu">
+          <li> <a ng-click="showhide('inner_submenu_state')"> <i class="entypo-menu"></i><span>States</span></a> 
+          	<ul id="inner_submenu_state" style="display:none;">
+		<li class="active">
+			<a ng-click="goto('Addstate')"><span>Add State</span></a>
+		</li>
+		<li class="active">
+			<a ng-click="goto('Admin')"><span>Manage State</span></a>
+		</li>
+		</ul>
+          	</li>
+          <li class="active"> <a href="" ng-click="showhide('inner_submenu_Muni')"> <i class="entypo-menu"></i><span>Municipalty</span></a>
+          	<ul id="inner_submenu_Muni" style="display:none;">
+		<li class="active">
+			<a ng-click="goto('Addmunicipality')"><span>Add Municipalty</span></a>
+		</li>
+		<li class="active">
+			<a  ng-click="goto('Adminmunicipality')"><span>Manage municipality</span></a>
+		</li>
+		</ul>
+          	 </li>
+          	  <li> <a ng-click="showhide('inner_submenu_housingAss')"> <i class="entypo-menu"></i><span>Housing Association</span></a> 
+          	<ul id="inner_submenu_housingAss" style="display:none;">
+		<li class="active">
+			<a ng-click="goto('AddHousingAss')"><span>Add Housing Association</span></a>
+		</li>
+		<li class="active">
+			<a ng-click="goto('HousingAssociation')"><span>Manage Housing Association</span></a>
+		</li>
+		</ul>
+          	</li>
+        </ul>
+      </li>
+    </ul>
+  </div> 
+  <div class="main-content">
+    <div class="row"> 
+      <!-- Profile Info and Notifications -->
+      <div class="col-md-6 col-sm-8 clearfix">
+        <ul class="user-info pull-left pull-none-xsm">
+          <!-- Profile Info -->
+          <li class="profile-info dropdown"><!-- add class "pull-right" if you want to place this from right --> 
+            <a ng-model='adminusername' class="dropdown-toggle" data-toggle="dropdown">Welcome  {{adminusername | uppercase}}</a>
+            <ul class="dropdown-menu">
+              <!-- Reverse Caret -->
+              <li class="caret"></li>
+              <!-- Profile sub-links -->
+              <li> <a href="#"> <i class="entypo-user"></i> Edit Profile </a> </li>
+              <li> <a href="../../mailbox/main/index.html"> <i class="entypo-mail"></i> Inbox </a> </li>
+              <li> <a href="../../extra/calendar/index.html"> <i class="entypo-calendar"></i> Calendar </a> </li>
+              <li> <a href="#"> <i class="entypo-clipboard"></i> Tasks </a> </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="user-info pull-left pull-right-xs pull-none-xsm">
+        </ul>
+      </div>
+      <!-- Raw Links -->
+      <div class="col-md-6 col-sm-4 clearfix hidden-xs">
+        <ul class="list-inline links-list pull-right">
+          <li> <a href="../../extra/login/index.html"> Log Out <i class="entypo-logout right"></i> </a> </li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row"> </div>
+    <h2 class="table_heading">STATE MANGEMENT</h2> 
+   <div class="add_btn_container"> 
+   	<button class="btn btn-success" type="button" ng-click="goto('Addstate')">Add State</button>
+   </div>
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading"> </div>
+          <table class="table table-bordered table-striped datatable" id="table-2">
+	<thead>
+		<tr>
+			
+			<th>State name</th>
+			<th>country</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr ng-repeat="state in states">
+			<td>{{state.state_name}}</td>
+			<td>{{state.state_location}}</td>		
+			<td>
+				<a href="" class="btn btn-default btn-sm btn-icon icon-left" ng-click='edit({{state.state_id}})'>
+					<i class="entypo-pencil"></i>
+					Edit
+				</a>
+				
+				<a href="#" class="btn btn-danger btn-sm btn-icon icon-left" ng-click='del({{state.state_id}})'>
+					<i class="entypo-cancel"></i>
+					Delete
+				</a>
+				<a href="" class="btn btn-info btn-sm btn-icon icon-left" ng-click='statedata({{state.state_id}})'>
+					<i class="entypo-info"></i>
+					View
+				</a>
+			</td>
+		</tr>
+		</tbody>
+</table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer --> 
+  </div>
+  <div id="chat" class="fixed" data-current-user="" data-order-by-status="1" data-max-chat-history="25">
+    <div class="chat-inner"> </div>
+    <!-- conversation template -->
+    <div class="chat-conversation">
+      <ul class="conversation-body">
+      </ul>
+    </div>
+  </div>
+  <!-- Chat Histories --> 
+  <!-- Chat Histories --> 
+</div>
+<!-- Sample Modal (Default skin) -->
+<div class="modal fade" id="sample-modal-dialog-1">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin inverted) -->
+<div class="modal invert fade" id="sample-modal-dialog-2">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+<!-- Sample Modal (Skin gray) -->
+<div class="modal gray fade" id="sample-modal-dialog-3">
+  <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+</div>
+</div>

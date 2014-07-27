@@ -1,0 +1,10 @@
+<div ng-controller="municipalitycontroller">
+	<h1>select your municipality</h1>
+ 	<ul class="topcoat-list list">
+		<li ng-repeat="mun in muncp" class="topcoat-list__item">
+			 <a  href="http://localhost:3000/#/Housing/{{mun.m_id}}"> 
+				{{mun.m_name}}
+				</a>
+		</li>		
+	</ul>
+</div>

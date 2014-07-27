@@ -1,0 +1,12 @@
+ <div ng-controller="stateController">
+ 	<ul class="topcoat-list list">
+ 		<h1>select  your state</h1>
+		<li ng-repeat="state in states" class="topcoat-list__item">
+			 <a  href="http://localhost:3000/Admin#/Municipality/{{state.state_id}}"> 
+			 	 <!-- <a ng-click="mun({{state.state_id}})" href="http://localhost:3000/#/Municipality/">  -->
+				{{state.state_name}}
+				</a>	
+		</li>
+		
+	</ul>
+</div>

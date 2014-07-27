@@ -1,0 +1,9 @@
+.text_temp{
+	width :100%;
+}
+.text_temp p {
+	font-size: 20px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 5%;
+}

@@ -1,0 +1,29 @@
+<div ng-controller="loginController">
+		<div class="bar bar-header bar-gray">
+	  <h1 class="title" style="color:#FFFFFF">ICEFIRE</h1>
+	</div>
+	<div class="bar bar-subheader">
+	  <h2 class="title">LOGIN </h2>
+	</div>
+	<content has-header="true" has-subheader="true">
+     <div>
+  <label class="item item-input">
+   
+    <input type="text" ng-model="user.username" readonly="true">
+  </label>
+  <label class="item item-input">
+
+    <input type="password" ng-model="user.buildingpass" placeholder="enter building password">
+  </label>
+  <div class="padding">
+<button class="button button-block button-positive"ng-click='login(user)'>Sign In</button>
+</div>
+</div>
+
+	 </content>
+		
+	<div class="bar bar-footer bar-gray">
+	   <div class="title">All © copyrights are reserved by icefire</div>
+	</div>
+
+</div>
